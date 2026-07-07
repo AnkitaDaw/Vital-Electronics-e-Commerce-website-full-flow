@@ -1,0 +1,167 @@
+/* PLP Page Specific Styles */
+.filter-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  color: var(--color-dark-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-card {
+  background: white;
+  border: 1px solid #ECEFF3;
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.65rem;
+  cursor: pointer;
+}
+
+.filter-option:last-child {
+  margin-bottom: 0;
+}
+
+.filter-option input[type="checkbox"],
+.filter-option input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid #D1D5DB;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.color-dot-filter {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid white;
+  outline: 1px solid #D1D5DB;
+  transition: var(--transition-fast);
+}
+
+.color-dot-filter.active {
+  outline: 2px solid var(--color-primary);
+}
+
+.filter-chip {
+  background-color: #EBF3FF;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: capitalize;
+}
+
+.filter-chip i {
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.filter-chip i:hover {
+  color: var(--color-danger);
+}
+
+/* List View Product Card Style */
+.product-card-list {
+  display: flex;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid #ECEFF3;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  /* margin-bottom: 1.5rem; */
+}
+
+.product-card-list:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: #D6E0EC;
+}
+
+.product-card-list .product-image-wrapper {
+  width: 240px;
+  min-width: 240px;
+  aspect-ratio: 1/1;
+}
+
+.product-card-list .product-details {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.layout-toggle-btn {
+  background: white;
+  border: 1.5px solid #E5E7EB;
+  color: var(--text-secondary);
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.layout-toggle-btn.active,
+.layout-toggle-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+/* PLP Custom classes */
+.color-dot-black {
+  background-color: #111827;
+}
+
+.color-dot-white {
+  background-color: #F9FAFB;
+}
+
+.color-dot-red {
+  background-color: #EF4444;
+}
+
+.color-dot-blue {
+  background-color: #3B82F6;
+}
+
+.color-dot-green {
+  background-color: #10B981;
+}
+
+.color-dot-grey {
+  background-color: #9CA3AF;
+}
+
+.sort-label {
+  font-size: 0.85rem;
+  min-width: 60px;
+}
+
+.sort-select {
+  font-size: 0.88rem;
+  width: 160px;
+}

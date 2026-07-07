@@ -1,0 +1,235 @@
+/* PDP Page Specific Styles */
+.gallery-main {
+  border: 1px solid #ECEFF3;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: zoom-in;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.gallery-main img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease-out;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding: 0.25rem 0;
+  scrollbar-width: thin;
+}
+
+.thumbnail-item {
+  width: 75px;
+  height: 75px;
+  border: 1.5px solid #ECEFF3;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.thumbnail-item.active,
+.thumbnail-item:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.thumbnail-item img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Quantity selector widget */
+.qty-selector {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 120px;
+}
+
+.qty-btn {
+  background: #F9FAFB;
+  border: none;
+  width: 36px;
+  height: 62px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background-color: #E5E7EB;
+}
+
+.qty-input {
+  width: 48px;
+  height: 36px;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.qty-input:focus {
+  outline: none;
+}
+
+/* Variant Choices styling */
+.variant-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid white;
+  outline: 1.5px solid #E5E7EB;
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--transition-fast);
+}
+
+.variant-circle.active {
+  outline: 2px solid var(--color-primary);
+}
+
+.variant-circle-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.variant-circle-disabled::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 45%, rgba(107, 114, 128, 0.65) 45%, rgba(107, 114, 128, 0.65) 55%, transparent 55%);
+}
+
+/* Warranty selectors */
+.warranty-option {
+  border: 1.5px solid #E5E7EB;
+  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.warranty-option.active {
+  border-color: var(--color-primary);
+  background-color: #F8FAFC;
+}
+
+.warranty-option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+/* Tabs Override styling */
+.nav-tabs-custom {
+  border-bottom: 2px solid #ECEFF3;
+}
+
+.nav-tabs-custom .nav-link {
+  border: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  margin-bottom: -2px;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.nav-tabs-custom .nav-link.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  background: none;
+}
+
+/* PDP Custom classes */
+#pdp-badge,
+#pdp-original-price,
+#pdp-discount-badge,
+#pdp-recent-section {
+  display: none;
+}
+
+.pdp-reviews-count {
+  font-size: 0.85rem;
+}
+
+.pdp-stock-status {
+  font-size: 0.85rem;
+}
+
+.pdp-wishlist-btn {
+  background-color: #F3F4F6 !important;
+  border-color: #E5E7EB !important;
+  color: #4B5563 !important;
+}
+
+.pdp-actions-row {
+  font-size: 0.85rem;
+}
+
+.pdp-specs-table {
+  font-size: 0.9rem;
+}
+
+.breakdown-label {
+  min-width: 50px;
+}
+
+.breakdown-progress {
+  height: 8px;
+}
+
+.breakdown-bar-5 {
+  width: 75%;
+}
+
+.breakdown-bar-4 {
+  width: 15%;
+}
+
+.breakdown-bar-3 {
+  width: 8%;
+}
+
+.breakdown-bar-2 {
+  width: 2%;
+}
+
+.breakdown-pct {
+  min-width: 30px;
+  text-align: right;
+}

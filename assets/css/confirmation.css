@@ -1,0 +1,137 @@
+/* Confirmation Specific CSS */
+    .success-card {
+      background: white;
+      border: 1px solid #ECEFF3;
+      border-radius: var(--border-radius-xl);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 2rem;
+    }
+    .success-icon {
+      font-size: 4rem;
+      color: var(--color-success);
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .confirmation-details-box {
+      background: white;
+      border: 1px solid #ECEFF3;
+      border-radius: var(--border-radius-lg);
+      padding: 1.75rem;
+      height: 100%;
+    }
+    
+    /* Timeline styles */
+    .timeline-steps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin: 3rem 0;
+    }
+    .timeline-steps::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 5%;
+      right: 5%;
+      height: 4px;
+      background: #E5E7EB;
+      z-index: 1;
+    }
+    .timeline-step {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      width: 25%;
+    }
+    .timeline-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #E5E7EB;
+      color: #9CA3AF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem auto;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border: 3px solid white;
+      transition: var(--transition-normal);
+    }
+    .timeline-step.active .timeline-dot {
+      background: var(--color-primary);
+      color: white;
+      box-shadow: 0 0 0 4px rgba(11, 95, 255, 0.2);
+    }
+    .timeline-step.complete .timeline-dot {
+      background: var(--color-success);
+      color: white;
+    }
+    .timeline-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    .timeline-step.active .timeline-label {
+      color: var(--color-primary);
+    }
+    .timeline-step.complete .timeline-label {
+      color: var(--color-success);
+    }
+    
+    .confirm-summary-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid #ECEFF3;
+    }
+    .confirm-summary-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .confirm-summary-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid #ECEFF3;
+      background-color: #F8FAFC;
+    }
+
+/* Confirmation Custom classes */
+.confirmation-container {
+  max-width: 960px;
+}
+.spin-animation {
+  animation: spin 3s linear infinite;
+}
+.confirmation-info-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.confirm-items-scroll {
+  max-height: 220px;
+  overflow-y: auto;
+}
+.confirm-summary-row {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.confirm-total-row {
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+}

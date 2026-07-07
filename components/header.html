@@ -1,0 +1,84 @@
+<!-- Header / Navigation -->
+<nav class="navbar navbar-expand-lg py-3" aria-label="Main Navigation">
+  <div class="container-xl">
+    <!-- Logo -->
+    <a class="navbar-brand brand-logo" href="index.html">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6L13 28H17L8 6H4Z" fill="#0B5FFF" />
+        <path d="M30 6L21 28H17L26 6H30Z" fill="#0B5FFF" />
+        <path d="M12 20L15 28L18 20H12Z" fill="#00D4FF" />
+      </svg>
+      <div class="brand-logo-text">
+        <span class="brand-title">VITAL</span>
+        <span class="brand-subtitle">ELECTRONICS</span>
+      </div>
+    </a>
+
+    <!-- Navbar Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-1">
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="products.html?category=Smart%20Watches">Smart Watches</a></li>
+            <li><a class="dropdown-item" href="products.html?category=Audio">Audio</a></li>
+            <li><a class="dropdown-item" href="products.html?category=Smart%20Home">Smart Home</a></li>
+            <li><a class="dropdown-item" href="products.html?category=Mobile%20Accessories">Mobile Accessories</a></li>
+            <li><a class="dropdown-item" href="products.html?category=Computer%20Accessories">Computer Accessories</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="products.html?badge=DEAL">Deals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="products.html?badge=NEW">New Arrivals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="products.html?badge=BEST%20SELLER">Best Sellers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-custom" href="support.html">Support</a>
+        </li>
+      </ul>
+
+      <!-- Search Bar -->
+      <div class="search-container mx-lg-3 my-2 my-lg-0" role="search">
+        <input type="text" class="form-control search-input" id="global-search-input"
+          placeholder="Search for products..." aria-label="Search Catalog" autocomplete="off">
+        <button class="search-btn" aria-label="Submit Search">
+          <i class="bi bi-search"></i>
+        </button>
+        <!-- Suggestions Box -->
+        <div class="search-suggestions" id="search-suggestions-box"></div>
+      </div>
+
+      <!-- User Status Actions -->
+      <div class="d-flex align-items-center gap-2 ms-lg-3">
+        <a href="checkout.html" class="nav-action-btn" aria-label="User Profile Profile">
+          <i class="bi bi-person"></i>
+          <span>Account</span>
+        </a>
+        <a href="products.html?wishlist=true" class="nav-action-btn" aria-label="View Saved Wishlist">
+          <i class="bi bi-heart"></i>
+          <span>Wishlist</span>
+          <span class="badge-count" id="wishlist-badge-count">1</span>
+        </a>
+        <a href="cart.html" class="nav-action-btn" aria-label="View Shopping Cart">
+          <i class="bi bi-cart3"></i>
+          <span>Cart</span>
+          <span class="badge-count" id="cart-badge-count">2</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

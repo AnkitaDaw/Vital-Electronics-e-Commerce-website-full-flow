@@ -1,0 +1,169 @@
+/* Responsive Media Queries */
+
+/* --- Up to 1440px (Desktop Container Checks) --- */
+@media (max-width: 1440px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+/* --- Up to 1200px (Large Screen Overrides) --- */
+@media (max-width: 1200px) {
+  .hero-slide-title {
+    font-size: 3rem;
+  }
+  .hero-slide-desc {
+    font-size: 1rem;
+  }
+  .promo-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* --- Up to 992px (Medium-Large / Tablet Landscape) --- */
+@media (max-width: 992px) {
+  .hero-slide-content {
+    padding: 3rem 2rem;
+  }
+  .hero-slide-title {
+    font-size: 2.5rem;
+  }
+  .promo-content {
+    padding: 2.25rem;
+    width: 60%;
+  }
+  .promo-image-wrapper {
+    width: 35%;
+  }
+  .trust-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  .newsletter-wrapper {
+    padding: 3rem 2rem;
+  }
+}
+
+/* --- Up to 768px (Medium / Tablet Portrait) --- */
+@media (max-width: 768px) {
+  .hero-slide-content {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-slide-badge {
+    align-self: center;
+  }
+  .hero-slide-desc {
+    max-width: 100%;
+  }
+  .hero-slide-actions {
+    justify-content: center;
+  }
+  .hero-slide-rating {
+    justify-content: center;
+  }
+  .hero-slide-image-wrapper {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .hero-slide-image {
+    max-height: 320px;
+  }
+  .promo-banner {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .promo-content {
+    width: 100%;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    align-items: center;
+  }
+  .promo-image-wrapper {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .promo-img {
+    height: 100%;
+    object-fit: contain;
+  }
+  .why-choose-section, .testimonials-section {
+    padding: 3.5rem 0;
+  }
+  .newsletter-input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* --- Up to 576px (Small / Mobile Landscape) --- */
+@media (max-width: 576px) {
+  .hero-slide-title {
+    font-size: 2.1rem;
+  }
+  .hero-slide-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .hero-slide-actions .btn {
+    width: 100%;
+  }
+  .promo-content {
+    padding: 2rem 1.5rem;
+  }
+  .promo-title {
+    font-size: 1.45rem;
+  }
+  .newsletter-wrapper {
+    padding: 2.5rem 1.5rem;
+  }
+  .newsletter-title {
+    font-size: 1.6rem;
+  }
+  .footer-section {
+    padding-top: 3.5rem;
+  }
+  .footer-bottom {
+    margin-top: 2.5rem;
+  }
+}
+
+/* --- Up to 375px (Extra Small / Compact Mobile) --- */
+@media (max-width: 375px) {
+  .hero-slide-title {
+    font-size: 1.85rem;
+  }
+  .trust-policy-section {
+    padding: 1.5rem 0;
+  }
+  .feature-outline-card {
+    padding: 1.5rem;
+  }
+  /* Accessible touch targets override */
+  .btn, .nav-link, .nav-action-btn, .product-wishlist-btn, .add-to-cart-circle, .toast-close {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .product-wishlist-btn {
+    width: 44px;
+    height: 44px;
+  }
+  .add-to-cart-circle {
+    width: 44px;
+    height: 44px;
+  }
+}

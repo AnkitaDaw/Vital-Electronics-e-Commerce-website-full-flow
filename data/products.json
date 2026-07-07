@@ -1,0 +1,359 @@
+[
+  {
+    "id": "vital-fit-pro",
+    "name": "Vital Fit Pro",
+    "category": "Smart Watches",
+    "price": 129,
+    "originalPrice": null,
+    "rating": 4.5,
+    "reviewsCount": 128,
+    "image": "assets/images/products/vital-fit-pro.png",
+    "gallery": [
+      "assets/images/products/vital-fit-pro.png",
+      "assets/images/products/vital-fit-pro-1.jpg"
+    ],
+    "badge": "NEW",
+    "badgeType": "success",
+    "description": "Stay ahead of the curve with the Vital Fit Pro. Featuring an advanced heart rate monitor, sleep tracking, and a stunning AMOLED screen, it's the ultimate health and fitness companion.",
+    "brand": "Vital",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#111827",
+      "#3B82F6",
+      "#EF4444"
+    ],
+    "specs": {
+      "Display": "1.43\" AMOLED Always-On Display",
+      "Battery Life": "Up to 10 Days",
+      "Water Resistance": "5ATM Waterproof",
+      "Sensors": "Heart Rate, SpO2, Accelerometer, Gyroscope",
+      "Compatibility": "iOS & Android"
+    }
+  },
+  {
+    "id": "vital-earbuds-pro",
+    "name": "Vital Earbuds Pro",
+    "category": "Audio",
+    "price": 59,
+    "originalPrice": 79,
+    "rating": 4.6,
+    "reviewsCount": 96,
+    "image": "assets/images/products/vital-earbuds-pro.png",
+    "gallery": [
+      "assets/images/products/vital-earbuds-pro.png",
+      "assets/images/products/vital-earbuds-pro-1.jpg"
+    ],
+    "badge": "BEST SELLER",
+    "badgeType": "warning",
+    "description": "Experience true wireless freedom with Vital Earbuds Pro. Delivering deep, punchy bass, crystal-clear highs, and active noise cancellation (ANC) to keep you locked in.",
+    "brand": "Vital",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#F9FAFB",
+      "#111827"
+    ],
+    "specs": {
+      "Driver Size": "10mm Dynamic Drivers",
+      "Connectivity": "Bluetooth 5.3",
+      "Battery Life": "Up to 30 Hours (with charging case)",
+      "Charging": "USB-C & Qi Wireless Charging",
+      "Noise Cancellation": "ANC up to 35dB"
+    }
+  },
+  {
+    "id": "65w-fast-charger",
+    "name": "65W Fast Charger",
+    "category": "Mobile Accessories",
+    "price": 29,
+    "originalPrice": null,
+    "rating": 4.3,
+    "reviewsCount": 74,
+    "image": "assets/images/products/65w-fast-charger.png",
+    "gallery": [
+      "assets/images/products/65w-fast-charger.png",
+      "assets/images/products/65w-fast-charger-1.jpg"
+    ],
+    "badge": "NEW",
+    "badgeType": "success",
+    "description": "Power up all your devices simultaneously. Utilizing GaN technology, this compact charger delivers up to 65W of power for laptops, tablets, and smartphones.",
+    "brand": "Vital Power",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#F9FAFB",
+      "#111827"
+    ],
+    "specs": {
+      "Technology": "GaN (Gallium Nitride)",
+      "Total Output": "65W Max",
+      "Ports": "2x USB-C, 1x USB-A",
+      "Input": "100-240V AC",
+      "Protection": "Over-current, over-voltage, short-circuit protection"
+    }
+  },
+  {
+    "id": "vital-smart-lamp",
+    "name": "Vital Smart Lamp",
+    "category": "Smart Home",
+    "price": 49,
+    "originalPrice": null,
+    "rating": 4.4,
+    "reviewsCount": 53,
+    "image": "assets/images/products/vital-smart-lamp.png",
+    "gallery": [
+      "assets/images/products/vital-smart-lamp.png",
+      "assets/images/products/vital-smart-lamp-1.jpg"
+    ],
+    "badge": null,
+    "badgeType": null,
+    "description": "Brighten your room your way. The Vital Smart Lamp offers 16 million colors, voice control compatibility, and customizable schedules to match your daily routine.",
+    "brand": "Vital Home",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#aeb3bf"
+    ],
+    "specs": {
+      "Luminosity": "800 Lumens",
+      "Color Temperature": "2200K - 6500K",
+      "Power Consumption": "9W Max",
+      "Smart Integrations": "Google Assistant, Alexa, Apple HomeKit",
+      "Lifespan": "25,000 Hours"
+    }
+  },
+  {
+    "id": "vital-speaker-mini",
+    "name": "Vital Speaker Mini",
+    "category": "Audio",
+    "price": 39,
+    "originalPrice": null,
+    "rating": 4.2,
+    "reviewsCount": 87,
+    "image": "assets/images/products/vital-speaker-mini.png",
+    "gallery": [
+      "assets/images/products/vital-speaker-mini.png",
+      "assets/images/products/vital-speaker-mini-1.jpg"
+    ],
+    "badge": "DEAL",
+    "badgeType": "primary",
+    "description": "Don't let the size fool you. The Vital Speaker Mini packs a punch with 360-degree sound, full waterproofing, and a rugged exterior built for adventure.",
+    "brand": "Vital",
+    "stockStatus": "low-stock",
+    "colors": [
+      "#111827",
+      "#10B981",
+      "#EF4444"
+    ],
+    "specs": {
+      "Output Power": "10W RMS",
+      "Battery Life": "Up to 12 Hours",
+      "Waterproofing": "IPX7 Waterproof",
+      "Connectivity": "Bluetooth 5.0, AUX Input",
+      "Weight": "350g"
+    }
+  },
+  {
+    "id": "vital-laptop-air-14",
+    "name": "Vital Laptop Air 14",
+    "category": "Computer Accessories",
+    "price": 699,
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewsCount": 68,
+    "image": "assets/images/products/vital-laptop-air-14.png",
+    "gallery": [
+      "assets/images/products/vital-laptop-air-14.png",
+      "assets/images/products/vital-laptop-air-14-1.jpg"
+    ],
+    "badge": "BEST SELLER",
+    "badgeType": "warning",
+    "description": "Ultra-thin, ultra-light, and ultra-powerful. Engineered for students and professionals on the move, featuring a beautiful QHD display and all-day battery life.",
+    "brand": "Vital",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#9CA3AF"
+    ],
+    "specs": {
+      "Processor": "Intel Core i5 (12th Gen)",
+      "RAM": "16GB LPDDR5",
+      "Storage": "512GB NVMe PCIe Gen4 SSD",
+      "Screen": "14\" IPS QHD (2560x1600), 100% sRGB",
+      "Weight": "1.2 kg"
+    }
+  },
+  {
+    "id": "vital-noisex-pro",
+    "name": "Vital NoiseX Pro",
+    "category": "Audio",
+    "price": 89.99,
+    "originalPrice": null,
+    "rating": 4.8,
+    "reviewsCount": 342,
+    "image": "assets/images/products/vital-noisex-pro.png",
+    "gallery": [
+      "assets/images/products/vital-noisex-pro.png",
+      "assets/images/products/vital-noisex-pro-1.jpg"
+    ],
+    "badge": "BEST SELLER",
+    "badgeType": "warning",
+    "description": "Block out the world and immerse yourself in sound. The NoiseX Pro features hybrid active noise cancellation, luxurious memory foam earcups, and industry-leading battery life.",
+    "brand": "Vital",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#dda1e6",
+      "#6B7280"
+    ],
+    "specs": {
+      "Drivers": "40mm Custom Dynamic Drivers",
+      "ANC": "Hybrid ANC up to 40dB",
+      "Battery Life": "Up to 40 Hours (ANC on)",
+      "Fast Charge": "5 mins = 4 hours playback",
+      "Voice Assistant": "Google Assistant & Siri Integrated"
+    }
+  },
+  {
+    "id": "vital-smart-watch",
+    "name": "Vital Smart Watch",
+    "category": "Smart Watches",
+    "price": 59.99,
+    "originalPrice": 79.99,
+    "rating": 4.7,
+    "reviewsCount": 215,
+    "image": "assets/images/products/vital-smart-watch.png",
+    "gallery": [
+      "assets/images/products/vital-smart-watch.png",
+      "assets/images/products/vital-smart-watch-1.jpg"
+    ],
+    "badge": "SALE",
+    "badgeType": "danger",
+    "description": "Monitor your vitals and stay connected with the classic Vital Smart Watch. Complete with notification sync, activity logging, and dynamic fitness tracking modes.",
+    "brand": "Vital",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#ebe1d7",
+      "#10B981",
+      "#D97706"
+    ],
+    "specs": {
+      "Screen": "1.3\" TFT Color Touchscreen",
+      "Battery Life": "Up to 7 Days",
+      "Health Tracking": "24/7 Heart Rate, Sleep, Activity Steps",
+      "Notifications": "Call, SMS, App notifications",
+      "App": "Vital Fit App (iOS/Android)"
+    }
+  },
+  {
+    "id": "vital-power-bank-20k",
+    "name": "Vital Power Bank 20K",
+    "category": "Mobile Accessories",
+    "price": 29.99,
+    "originalPrice": null,
+    "rating": 4.5,
+    "reviewsCount": 156,
+    "image": "assets/images/products/vital-power-bank-20k.png",
+    "gallery": [
+      "assets/images/products/vital-power-bank-20k.png",
+      "assets/images/products/vital-power-bank-20k-1.jpg"
+    ],
+    "badge": "BEST SELLER",
+    "badgeType": "warning",
+    "description": "Never run out of power again. This 20000mAh high-capacity portable power bank supports 22.5W two-way fast charging for up to three devices at once.",
+    "brand": "Vital Power",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#111827"
+    ],
+    "specs": {
+      "Capacity": "20000mAh / 74Wh",
+      "Output": "USB-C (PD 20W), 2x USB-A (22.5W)",
+      "Input": "USB-C (PD 18W)",
+      "Material": "ABS + Fireproof PC",
+      "Dimensions": "143 x 68 x 27 mm"
+    }
+  },
+  {
+    "id": "vital-hub-pro",
+    "name": "Vital Hub Pro",
+    "category": "Computer Accessories",
+    "price": 45,
+    "originalPrice": 55,
+    "rating": 4.4,
+    "reviewsCount": 82,
+    "image": "assets/images/products/vital-hub-pro.png",
+    "gallery": [
+      "assets/images/products/vital-hub-pro.png",
+      "assets/images/products/vital-hub-pro-1.jpg"
+    ],
+    "badge": "SALE",
+    "badgeType": "danger",
+    "description": "Expand your workstation connectivity. This 7-in-1 USB-C hub features an HDMI 4K output, dual USB 3.0 ports, card readers, and USB-C pass-through Power Delivery.",
+    "brand": "Vital Tech",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#9CA3AF"
+    ],
+    "specs": {
+      "Input": "USB-C",
+      "Ports": "1x HDMI (4K@30Hz), 2x USB 3.0, 1x SD, 1x TF, 1x USB-C Data, 1x USB-C PD (100W)",
+      "Shell Material": "Aluminum Alloy",
+      "Cable Length": "15 cm"
+    }
+  },
+  {
+    "id": "vital-plug-smart",
+    "name": "Vital Plug Smart",
+    "category": "Smart Home",
+    "price": 19.99,
+    "originalPrice": null,
+    "rating": 4.1,
+    "reviewsCount": 42,
+    "image": "assets/images/products/vital-plug-smart.png",
+    "gallery": [
+      "assets/images/products/vital-plug-smart.png",
+      "assets/images/products/vital-plug-smart-1.jpg"
+    ],
+    "badge": null,
+    "badgeType": null,
+    "description": "Control any electronic appliance from anywhere. Schedule devices to turn on/off automatically, and monitor energy consumption directly through the app.",
+    "brand": "Vital Home",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#F9FAFB"
+    ],
+    "specs": {
+      "Input Voltage": "100-240V AC 50/60Hz",
+      "Max Load": "15A, 1800W",
+      "Wi-Fi Network": "2.4GHz only",
+      "App Control": "Vital Smart App",
+      "Voice Integration": "Alexa, Google Assistant"
+    }
+  },
+  {
+    "id": "vital-keyboard-air",
+    "name": "Vital Keyboard Air",
+    "category": "Computer Accessories",
+    "price": 69.99,
+    "originalPrice": 89.99,
+    "rating": 4.6,
+    "reviewsCount": 112,
+    "image": "assets/images/products/vital-keyboard-air.png",
+    "gallery": [
+      "assets/images/products/vital-keyboard-air.png",
+      "assets/images/products/vital-keyboard-air-1.jpg"
+    ],
+    "badge": "SALE",
+    "badgeType": "danger",
+    "description": "Sleek, silent, and wireless. The Keyboard Air features low-profile keys, dual-mode connectivity, and multi-device pairing to enhance your productivity.",
+    "brand": "Vital Tech",
+    "stockStatus": "in-stock",
+    "colors": [
+      "#F9FAFB",
+      "#111827"
+    ],
+    "specs": {
+      "Layout": "Full size 104 Keys",
+      "Key Switches": "Scissor-switch Silent Keys",
+      "Connection": "Bluetooth 5.0 & 2.4GHz USB Dongle",
+      "Rechargeable Battery": "500mAh Lithium-ion (USB-C)",
+      "Compatibility": "Windows, macOS, iPadOS, Android"
+    }
+  }
+]

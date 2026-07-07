@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Vital Electronics</title>
+  <meta name="description" content="Explore product specifications, reviews, price savings, and extended warranty policies. Buy online with safe and secure checkout.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library Styles (CDNs) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+  <!-- Local Custom Stylesheet Layers -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <link rel="stylesheet" href="assets/css/product.css">
+</head>
+<body>
+
+  <!-- Announcement Bar Placeholder -->
+  <div id="announcement-bar-placeholder"></div>
+
+
+  <!-- Header / Navigation -->
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav-wrapper py-3" aria-label="breadcrumb">
+    <div class="container-xl">
+      <ol class="breadcrumb mb-0" >
+        <li class="breadcrumb-item"><a href="index.html" >Home</a></li>
+        <li class="breadcrumb-item"><a href="products.html" >Products</a></li>
+        <li class="breadcrumb-item active" id="breadcrumb-product-name" aria-current="page">Loading...</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="py-5" role="main" id="pdp-container">
+    <div class="container-xl">
+      
+      <!-- Top detail block -->
+      <div class="row g-5">
+        <!-- Gallery Left Column -->
+        <div class="col-lg-6 col-12">
+          <div class="gallery-main" id="pdp-gallery-main">
+            <img src="" id="pdp-main-image" alt="Product Image">
+          </div>
+          <div class="thumbnail-list" id="pdp-thumbnail-list">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+        
+        <!-- Info Right Column -->
+        <div class="col-lg-6 col-12" id="pdp-info-column">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge bg-light text-secondary border px-2 py-1" id="pdp-category">Category</span>
+            <span class="badge bg-success text-white px-2 py-1" id="pdp-badge" >NEW</span>
+          </div>
+          
+          <h1 class="fs-2 fw-bold text-dark mb-2" id="pdp-product-name">Product Name</h1>
+          
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="rating-stars" id="pdp-stars"></span>
+            <span class="text-muted" class="text-muted pdp-reviews-count" id="pdp-reviews-count">(0 Reviews)</span>
+            <span class="text-secondary mx-1">|</span>
+            <span class="text-success font-weight-600" class="text-success font-weight-600 pdp-stock-status" id="pdp-stock-status">In Stock</span>
+          </div>
+          
+          <!-- Prices -->
+          <div class="price-container bg-light p-3 rounded mb-4 align-items-center gap-3">
+            <span class="fs-2 fw-bold text-primary-color" id="pdp-price">$0.00</span>
+            <span class="fs-5 text-muted text-decoration-line-through" id="pdp-original-price" >$0.00</span>
+            <span class="badge bg-danger text-white px-2 py-1" id="pdp-discount-badge" >Save $0.00</span>
+          </div>
+          
+          <p class="text-secondary mb-4" id="pdp-short-desc">Short description of product properties.</p>
+          
+          <hr class="my-4">
+          
+          <!-- Variants: Colors -->
+          <div class="mb-4">
+            <h3 class="fs-6 font-weight-700 text-uppercase mb-3">Select Color</h3>
+            <div class="d-flex gap-2" id="pdp-colors-container">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+          
+          <!-- Warranty Choices -->
+          <div class="mb-4">
+            <h3 class="fs-6 font-weight-700 text-uppercase mb-3">Select Warranty</h3>
+            <div class="d-flex flex-column gap-2" id="pdp-warranty-container">
+              <label class="warranty-option active">
+                <div>
+                  <input type="radio" name="warranty" value="basic" checked>
+                  <span class="font-weight-600 text-dark ms-2">1 Year Standard Warranty</span>
+                </div>
+                <span class="text-muted">Included</span>
+              </label>
+              <label class="warranty-option">
+                <div>
+                  <input type="radio" name="warranty" value="extended-2">
+                  <span class="font-weight-600 text-dark ms-2">2 Year Extended Protection</span>
+                </div>
+                <span class="text-primary-color font-weight-600">+$19.99</span>
+              </label>
+              <label class="warranty-option">
+                <div>
+                  <input type="radio" name="warranty" value="extended-3">
+                  <span class="font-weight-600 text-dark ms-2">3 Year Accidental Protection</span>
+                </div>
+                <span class="text-primary-color font-weight-600">+$39.99</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Quantity and Cart Action -->
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <div class="qty-selector">
+              <button class="qty-btn" id="btn-qty-minus" aria-label="Decrease Quantity">-</button>
+              <input type="text" class="qty-input" id="qty-count-input" value="1" readonly>
+              <button class="qty-btn" id="btn-qty-plus" aria-label="Increase Quantity">+</button>
+            </div>
+            
+            <button class="btn btn-primary-custom flex-grow-1 py-3" id="btn-pdp-add-cart">
+              <i class="bi bi-cart-plus fs-5 me-2"></i> Add to Cart
+            </button>
+            
+            <button id="btn-pdp-wishlist" class="btn btn-primary py-3 px-4 pdp-wishlist-btn" aria-label="Save to Wishlist">
+              <i class="bi bi-heart fs-5"></i>
+            </button>
+          </div>
+          
+          <div class="d-flex gap-4" class="d-flex gap-4 pdp-actions-row">
+            <button class="btn p-0 text-secondary d-flex align-items-center gap-1 bg-none border-0" id="btn-pdp-compare">
+              <i class="bi bi-arrow-left-right"></i> Add to Compare
+            </button>
+            <button class="btn p-0 text-secondary d-flex align-items-center gap-1 bg-none border-0" id="btn-pdp-share">
+              <i class="bi bi-share"></i> Share Product
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Info tabs (Specs, Description, Reviews) -->
+      <div class="row mt-5 pt-4">
+        <div class="col-12">
+          <!-- Nav Tabs -->
+          <ul class="nav nav-tabs nav-tabs-custom mb-4" id="productTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="desc-tab" data-bs-toggle="tab" data-bs-target="#desc-pane" type="button" role="tab" aria-controls="desc-pane" aria-selected="true">Description</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs-pane" type="button" role="tab" aria-controls="specs-pane" aria-selected="false">Specifications</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews-pane" type="button" role="tab" aria-controls="reviews-pane" aria-selected="false">Reviews</button>
+            </li>
+          </ul>
+          
+          <!-- Tab Contents -->
+          <div class="tab-content bg-white p-4 border rounded" id="productTabsContent">
+            
+            <!-- Description -->
+            <div class="tab-pane fade show active" id="desc-pane" role="tabpanel" aria-labelledby="desc-tab">
+              <h2 class="fs-5 fw-bold mb-3">Product Overview</h2>
+              <p id="pdp-full-desc" class="text-secondary leading-relaxed">Full description will load here.</p>
+            </div>
+            
+            <!-- Specs -->
+            <div class="tab-pane fade" id="specs-pane" role="tabpanel" aria-labelledby="specs-tab">
+              <h2 class="fs-5 fw-bold mb-3">Technical Specifications</h2>
+              <div class="table-responsive">
+                <table class="table table-striped border mb-0" class="table table-striped border mb-0 pdp-specs-table">
+                  <tbody id="pdp-specs-table">
+                    <!-- Loaded dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <!-- Reviews -->
+            <div class="tab-pane fade" id="reviews-pane" role="tabpanel" aria-labelledby="reviews-tab">
+              <div class="row g-4 mb-4">
+                <div class="col-md-4 text-center border-end">
+                  <h2 class="fs-1 fw-bold text-primary-color mb-0" id="pdp-review-avg">0.0</h2>
+                  <span class="rating-stars fs-5" id="pdp-review-avg-stars"></span>
+                  <p class="text-muted mt-2" id="pdp-review-avg-count">Based on 0 reviews</p>
+                </div>
+                <div class="col-md-8 px-lg-4">
+                  <h3 class="fs-6 fw-bold mb-3">Rating Breakdown</h3>
+                  <!-- Mocking breakdown bars -->
+                  <div class="d-flex align-items-center gap-2 mb-2" class="d-flex gap-4 pdp-actions-row">
+                    <span class="breakdown-label">5 Stars</span>
+                    <div class="progress flex-grow-1" class="progress flex-grow-1 breakdown-progress"><div class="progress-bar bg-warning" role="progressbar" class="progress-bar bg-warning breakdown-bar-5" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    <span class="breakdown-pct">75%</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 mb-2" class="d-flex gap-4 pdp-actions-row">
+                    <span class="breakdown-label">4 Stars</span>
+                    <div class="progress flex-grow-1" class="progress flex-grow-1 breakdown-progress"><div class="progress-bar bg-warning" role="progressbar" class="progress-bar bg-warning breakdown-bar-4" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    <span class="breakdown-pct">15%</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2 mb-2" class="d-flex gap-4 pdp-actions-row">
+                    <span class="breakdown-label">3 Stars</span>
+                    <div class="progress flex-grow-1" class="progress flex-grow-1 breakdown-progress"><div class="progress-bar bg-warning" role="progressbar" class="progress-bar bg-warning breakdown-bar-3" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    <span class="breakdown-pct">8%</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2" class="d-flex gap-4 pdp-actions-row">
+                    <span class="breakdown-label">2 Stars</span>
+                    <div class="progress flex-grow-1" class="progress flex-grow-1 breakdown-progress"><div class="progress-bar bg-warning" role="progressbar" class="progress-bar bg-warning breakdown-bar-2" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"></div></div>
+                    <span class="breakdown-pct">2%</span>
+                  </div>
+                </div>
+              </div>
+              
+              <hr class="my-4">
+              
+              <!-- Review list container -->
+              <div id="pdp-reviews-list">
+                <!-- Dynamically populated mock comments -->
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Products -->
+      <section class="mt-5 pt-4">
+        <h2 class="fs-4 fw-bold mb-4">Related Products</h2>
+        <div class="row g-4" id="pdp-related-products">
+          <!-- Load 4 related cards -->
+        </div>
+      </section>
+
+      <!-- Recently Viewed -->
+      <section class="mt-5 pt-4" id="pdp-recent-section" >
+        <h2 class="fs-4 fw-bold mb-4">Recently Viewed</h2>
+        <div class="row g-4" id="pdp-recent-products">
+          <!-- Load recently viewed list -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="btn-back-to-top" class="btn" aria-label="Scroll Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Share Product Modal -->
+  <div class="modal fade" id="shareProductModal" tabindex="-1" aria-labelledby="shareProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="shareProductModalLabel">Share this Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <p class="text-secondary mb-3">Copy this product link to share with friends:</p>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="share-link-input" readonly>
+            <button class="btn btn-primary" id="btn-copy-share-link">Copy</button>
+          </div>
+          <div class="d-flex justify-content-center gap-3 fs-3 text-secondary mt-2">
+            <i class="bi bi-facebook cursor-pointer text-primary" title="Facebook"></i>
+            <i class="bi bi-twitter-x cursor-pointer text-dark" title="Twitter"></i>
+            <i class="bi bi-whatsapp cursor-pointer text-success" title="WhatsApp"></i>
+            <i class="bi bi-envelope cursor-pointer text-danger" title="Email"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Library JS Bundles (CDNs) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main ES Module Script Loader -->
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/product.js"></script>
+  <script type="module" src="js/search.js"></script>
+</body>
+</html>

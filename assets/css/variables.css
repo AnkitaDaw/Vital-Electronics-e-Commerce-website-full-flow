@@ -1,0 +1,48 @@
+/* Design Tokens & CSS Variables */
+:root {
+  /* Typography */
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  
+  /* Color Palette */
+  --color-primary: #0B5FFF;       /* Primary Blue */
+  --color-primary-hover: #004ae6;
+  --color-secondary: #0B3C95;     /* Dark Blue Theme */
+  --color-accent: #00D4FF;        /* Accent Aqua */
+  --color-bg-light: #F8FAFC;      /* Light Background */
+  --color-bg-white: #FFFFFF;
+  --color-dark-bg: #090D16;       /* Footer BG */
+  --color-dark-text: #111827;     /* High Contrast Dark */
+  
+  /* Text Colors */
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --text-white: #FFFFFF;
+  
+  /* Badges & Status */
+  --color-success: #10B981;      /* Green for NEW */
+  --color-warning: #F59E0B;      /* Orange for BEST SELLER */
+  --color-danger: #EF4444;       /* Red for SALE */
+  
+  /* Structural Tokens */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-circle: 50%;
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s ease;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+  
+  /* Layout */
+  --header-height: 80px;
+  --top-bar-height: 40px;
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Vital Electronics</title>
+  <meta name="description"
+    content="Secure Checkout. Provide your billing details, select a shipping option, enter payment details, and place your order safely.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS Library Styles (CDNs) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Local Custom Stylesheet Layers -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <link rel="stylesheet" href="assets/css/checkout.css">
+</head>
+
+<body>
+
+  <!-- Announcement Bar Placeholder -->
+  <div id="announcement-bar-placeholder"></div>
+
+
+  <!-- Header / Navigation -->
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav-wrapper py-3" aria-label="breadcrumb">
+    <div class="container-xl">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="py-5" role="main">
+    <div class="container-xl">
+      <h1 class="fs-3 fw-bold mb-4">Secure Checkout</h1>
+
+      <form id="checkout-main-form" novalidate>
+        <div class="row g-4">
+
+          <!-- Details & Payments (Left) -->
+          <div class="col-lg-7 col-12">
+
+            <!-- Shipping Info -->
+            <div class="checkout-form-section">
+              <h2 class="checkout-form-title"><i class="bi bi-geo-alt me-2 text-primary"></i> Shipping Address</h2>
+
+              <div class="row g-3">
+                <div class="col-md-6 col-12">
+                  <label for="shipping-first-name" class="form-label font-weight-600">First Name <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-first-name" required>
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+                <div class="col-md-6 col-12">
+                  <label for="shipping-last-name" class="form-label font-weight-600">Last Name <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-last-name" required>
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+                <div class="col-12">
+                  <label for="shipping-email" class="form-label font-weight-600">Email Address <span
+                      class="text-danger">*</span></label>
+                  <input type="email" class="form-control py-2" id="shipping-email" placeholder="you@example.com"
+                    required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-12">
+                  <label for="shipping-address" class="form-label font-weight-600">Address Line <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-address" placeholder="123 Street Name"
+                    required>
+                  <div class="invalid-feedback">Address line is required.</div>
+                </div>
+                <div class="col-md-5 col-12">
+                  <label for="shipping-city" class="form-label font-weight-600">City <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-city" required>
+                  <div class="invalid-feedback">City is required.</div>
+                </div>
+                <div class="col-md-4 col-12">
+                  <label for="shipping-state" class="form-label font-weight-600">State <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-state" required>
+                  <div class="invalid-feedback">State is required.</div>
+                </div>
+                <div class="col-md-3 col-12">
+                  <label for="shipping-zip" class="form-label font-weight-600">ZIP Code <span
+                      class="text-danger">*</span></label>
+                  <input type="text" class="form-control py-2" id="shipping-zip" pattern="^\d{5}$" maxlength="5"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+                  <div class="invalid-feedback">Zip code must be exactly 5 numbers.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="checkout-form-section">
+              <h2 class="checkout-form-title"><i class="bi bi-credit-card me-2 text-primary"></i> Payment Method</h2>
+
+              <div class="d-flex flex-column" id="payment-methods-accordion">
+
+                <!-- Credit Card option -->
+                <div class="payment-accordion-item active" id="item-cc">
+                  <div class="payment-accordion-header">
+                    <input type="radio" name="payment-method" id="pay-cc" value="cc" checked>
+                    <label for="pay-cc" class="fw-bold text-dark mb-0 cursor-pointer">Credit / Debit Card</label>
+                  </div>
+                  <div class="payment-accordion-body">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cc-name" class="form-label font-weight-600">Name on Card <span
+                            class="text-danger">*</span></label>
+                        <input type="text" class="form-control py-2" id="cc-name" pattern="^[a-zA-Z\s]{3,50}$"
+                          placeholder="John Doe" required>
+                        <div class="invalid-feedback">Cardholder name must contain only letters and spaces (3-50
+                          characters).</div>
+                      </div>
+                      <div class="col-12">
+                        <label for="cc-number" class="form-label font-weight-600">Card Number <span
+                            class="text-danger">*</span></label>
+                        <input type="text" class="form-control py-2" id="cc-number" placeholder="1234 5678 1234 5678"
+                          pattern="^\d{4}\s\d{4}\s\d{4}\s\d{4}$"
+                          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\d{4})(?=\d)/g, '$1 ').substring(0, 19);"
+                          required>
+                        <div class="invalid-feedback">Enter a valid 16-digit card number (e.g. 1234 5678 1234 5678).
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <label for="cc-expiry" class="form-label font-weight-600">Expiration <span
+                            class="text-danger">*</span></label>
+                        <input type="text" class="form-control py-2" id="cc-expiry" placeholder="MM/YY"
+                          pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+                          oninput="let v = this.value.replace(/[^0-9]/g, ''); if (v.length > 2) { v = v.substring(0, 2) + '/' + v.substring(2, 4); } this.value = v.substring(0, 5);"
+                          required>
+                        <div class="invalid-feedback">Expiration date must be MM/YY (e.g. 12/28).</div>
+                      </div>
+                      <div class="col-md-6 col-12">
+                        <label for="cc-cvv" class="form-label font-weight-600">CVV <span
+                            class="text-danger">*</span></label>
+                        <input type="text" class="form-control py-2" id="cc-cvv" placeholder="123" pattern="^\d{3}$"
+                          maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '').substring(0, 3);"
+                          required>
+                        <div class="invalid-feedback">CVV must be exactly 3 numbers.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PayPal option -->
+                <div class="payment-accordion-item" id="item-paypal">
+                  <div class="payment-accordion-header">
+                    <input type="radio" name="payment-method" id="pay-paypal" value="paypal">
+                    <label for="pay-paypal" class="fw-bold text-dark mb-0 cursor-pointer">PayPal</label>
+                  </div>
+                  <div class="payment-accordion-body text-secondary">
+                    You will be redirected to the secure PayPal interface to authorize your payment after clicking
+                    "Place Order".
+                  </div>
+                </div>
+
+                <!-- Cash on Delivery option -->
+                <div class="payment-accordion-item" id="item-cod">
+                  <div class="payment-accordion-header">
+                    <input type="radio" name="payment-method" id="pay-cod" value="cod">
+                    <label for="pay-cod" class="fw-bold text-dark mb-0 cursor-pointer">Cash on Delivery (COD)</label>
+                  </div>
+                  <div class="payment-accordion-body text-secondary">
+                    Pay with cash directly to the courier agent upon receiving your package at your delivery address.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Order Summary review (Right) -->
+          <div class="col-lg-5 col-12">
+            <div class="summary-card checkout-sticky-sidebar">
+              <h2 class="fs-5 fw-bold mb-4">Your Order</h2>
+
+              <!-- Cart items row overview -->
+              <div class="d-flex flex-column border-bottom pb-4 mb-4" id="checkout-items-list">
+                <!-- Dynamically populated -->
+              </div>
+
+              <!-- Pricing summary details -->
+              <div class="summary-row d-flex justify-content-between gap-3 py-1">
+                <span>Subtotal</span>
+                <span id="checkout-subtotal">$0.00</span>
+              </div>
+              <div class="summary-row d-flex justify-content-between gap-3 py-1 text-danger" id="checkout-discount-row">
+                <span>Discounts</span>
+                <span id="checkout-discount">-$0.00</span>
+              </div>
+              <div class="summary-row d-flex justify-content-between gap-3 py-1 mb-3">
+                <span>Shipping</span>
+                <span id="checkout-shipping">Free</span>
+              </div>
+              <div
+                class="summary-row d-flex justify-content-between gap-3 total-row py-3 border-top border-bottom border-1 mb-4">
+                <span>Grand Total</span>
+                <span id="checkout-grand-total">$0.00</span>
+              </div>
+
+              <!-- Place Order Button -->
+              <button type="submit" class="btn btn-primary-custom w-100 py-3 fs-5" id="btn-place-order">
+                <i class="bi bi-shield-check me-2"></i> Place Order
+              </button>
+
+              <div class="text-center text-secondary mt-3" class="text-center text-secondary mt-3 checkout-disclaimer">
+                <i class="bi bi-shield-lock-fill text-success fs-6 me-1"></i>
+                Your payment data is fully encrypted with 256-bit SSL protocols.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="btn-back-to-top" class="btn" aria-label="Scroll Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- External Library JS Bundles (CDNs) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main ES Module Script Loader -->
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/checkout.js"></script>
+  <script type="module" src="js/search.js"></script>
+</body>
+
+</html>

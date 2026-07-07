@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Vital Electronics</title>
+  <meta name="description" content="Browse our catalog of premium smart watches, audio, smart home devices, and laptop accessories. Use advanced filters to find the perfect gear.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library Styles (CDNs) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+  <!-- Local Custom Stylesheet Layers -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <link rel="stylesheet" href="assets/css/products.css">
+</head>
+<body>
+
+  <!-- Announcement Bar Placeholder -->
+  <div id="announcement-bar-placeholder"></div>
+
+
+  <!-- Header / Navigation -->
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav-wrapper py-3" aria-label="breadcrumb">
+    <div class="container-xl">
+      <ol class="breadcrumb mb-0" >
+        <li class="breadcrumb-item"><a href="index.html" >Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-current">Products</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="py-5" role="main">
+    <div class="container-xl">
+      <div class="row g-4">
+        
+        <!-- Sidebar Filters (Large Screens) -->
+        <aside class="col-lg-3 d-none d-lg-block" role="complementary" aria-label="Product Filters">
+          
+          <!-- Category Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Category</h3>
+            <div class="d-flex flex-column gap-2" id="filter-categories-container">
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="all" checked>
+                <span>All Categories</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="Smart Watches">
+                <span>Smart Watches</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="Audio">
+                <span>Audio</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="Smart Home">
+                <span>Smart Home</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="Mobile Accessories">
+                <span>Mobile Accessories</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="category-filter" value="Computer Accessories">
+                <span>Computer Accessories</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Price Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Price Range</h3>
+            <div class="d-flex flex-column gap-2">
+              <label class="filter-option">
+                <input type="radio" name="price-filter" value="all" checked>
+                <span>All Prices</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price-filter" value="under-50">
+                <span>Under $50</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price-filter" value="50-100">
+                <span>$50 to $100</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price-filter" value="100-200">
+                <span>$100 to $200</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="price-filter" value="over-200">
+                <span>Over $200</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Brand Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Brand</h3>
+            <div class="d-flex flex-column gap-2" id="filter-brands-container">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Rating Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Customer Rating</h3>
+            <div class="d-flex flex-column gap-2">
+              <label class="filter-option">
+                <input type="checkbox" name="rating-filter" value="4.5">
+                <span class="d-flex align-items-center gap-1">4.5 & up <i class="bi bi-star-fill text-warning"></i></span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="rating-filter" value="4.0">
+                <span class="d-flex align-items-center gap-1">4.0 & up <i class="bi bi-star-fill text-warning"></i></span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="rating-filter" value="3.5">
+                <span class="d-flex align-items-center gap-1">3.5 & up <i class="bi bi-star-fill text-warning"></i></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Colors Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Colors</h3>
+            <div class="d-flex flex-wrap gap-2" id="filter-colors-container">
+              <span class="color-dot-filter" data-color="#111827" class="color-dot-filter color-dot-black" title="Black"></span>
+              <span class="color-dot-filter" data-color="#F9FAFB" class="color-dot-filter color-dot-white" title="White"></span>
+              <span class="color-dot-filter" data-color="#EF4444" class="color-dot-filter color-dot-red" title="Red"></span>
+              <span class="color-dot-filter" data-color="#3B82F6" class="color-dot-filter color-dot-blue" title="Blue"></span>
+              <span class="color-dot-filter" data-color="#10B981" class="color-dot-filter color-dot-green" title="Green"></span>
+              <span class="color-dot-filter" data-color="#9CA3AF" class="color-dot-filter color-dot-grey" title="Grey"></span>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-card">
+            <h3 class="filter-section-title">Availability</h3>
+            <div class="d-flex flex-column gap-2">
+              <label class="filter-option">
+                <input type="checkbox" name="stock-filter" value="in-stock">
+                <span>In Stock Only</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Clear Filters Button -->
+          <button class="btn btn-outline-danger w-100" id="btn-clear-filters">
+            <i class="bi bi-trash"></i> Clear All Filters
+          </button>
+        </aside>
+
+        <!-- Main Products Container -->
+        <section class="col-lg-9 col-12" role="region" aria-label="Product Catalog">
+          
+          <!-- PLP Header & Sorting Panel -->
+          <div class="bg-white border rounded p-3 mb-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+              <!-- Mobile Filters Trigger -->
+              <button class="btn btn-primary-custom d-lg-none d-flex align-items-center gap-2 py-2 px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilters" aria-controls="offcanvasFilters">
+                <i class="bi bi-funnel"></i> Filters
+              </button>
+              <h1 class="fs-5 mb-0 fw-bold" id="products-count-text">Showing 0 products</h1>
+            </div>
+            
+            <div class="d-flex align-items-center gap-3">
+              <!-- Sort selection -->
+              <div class="d-flex align-items-center gap-2">
+                <label for="sort-select" class="text-secondary font-weight-500 mb-0 d-none d-sm-block" class="text-secondary font-weight-500 mb-0 d-none d-sm-block sort-label">Sort By:</label>
+                <select class="form-select py-1 px-2 border" id="sort-select" class="form-select py-1 px-2 border sort-select">
+                  <option value="popular" selected>Most Popular</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rated">Highest Rated</option>
+                  <option value="newest">Newest Arrivals</option>
+                </select>
+              </div>
+              
+              <!-- Grid/List Toggle Buttons -->
+              <div class="d-flex gap-2">
+                <button class="layout-toggle-btn active" id="btn-layout-grid" aria-label="Grid View">
+                  <i class="bi bi-grid-3x3-gap-fill"></i>
+                </button>
+                <button class="layout-toggle-btn" id="btn-layout-list" aria-label="List View">
+                  <i class="bi bi-list-task"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Filter Chips row -->
+          <div class="d-flex flex-wrap gap-2 mb-4" id="active-filter-chips">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Grid/List layout container -->
+          <div class="row g-4" id="plp-products-grid">
+            <!-- Dynamically populated from JS -->
+          </div>
+
+          <!-- Dynamic Pagination -->
+          <nav class="mt-5" aria-label="Page Navigation" id="plp-pagination-nav">
+            <ul class="pagination justify-content-center gap-2" id="plp-pagination">
+              <!-- Dynamically populated -->
+            </ul>
+          </nav>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile Offcanvas Filters Panel -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
+    <div class="offcanvas-header bg-light border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasFiltersLabel">Filters</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4" id="offcanvas-filters-body">
+      <!-- Filters will be cloned here in JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="btn-back-to-top" class="btn" aria-label="Scroll Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- External Library JS Bundles (CDNs) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main ES Module Script Loader -->
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/products.js"></script>
+  <script type="module" src="js/search.js"></script>
+</body>
+</html>

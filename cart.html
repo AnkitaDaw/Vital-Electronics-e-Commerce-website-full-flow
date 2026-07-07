@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Vital Electronics</title>
+  <meta name="description" content="View items in your shopping cart. Apply coupon codes, adjust quantities, calculate shipping, and proceed to secure checkout.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Library Styles (CDNs) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+  <!-- Local Custom Stylesheet Layers -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  
+  <link rel="stylesheet" href="assets/css/cart.css">
+</head>
+<body>
+
+  <!-- Announcement Bar Placeholder -->
+  <div id="announcement-bar-placeholder"></div>
+
+
+  <!-- Header / Navigation -->
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav-wrapper py-3" aria-label="breadcrumb">
+    <div class="container-xl">
+      <ol class="breadcrumb mb-0" >
+        <li class="breadcrumb-item"><a href="index.html" >Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Your Cart</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="py-5" role="main">
+    <div class="container-xl">
+      <h1 class="fs-3 fw-bold mb-4">Shopping Cart</h1>
+      
+      <div class="row g-4">
+        <!-- Cart Items List (Left) -->
+        <div class="col-lg-8 col-12">
+          <div class="bg-white border rounded p-4" id="cart-items-card">
+            <!-- Render list row here -->
+            <div class="d-flex flex-column" id="cart-items-list">
+              <!-- Dynamically populated -->
+            </div>
+            <!-- Continue Shopping row -->
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top" id="cart-actions-row">
+              <a href="products.html" class="btn btn-outline-primary-custom d-inline-flex align-items-center gap-2">
+                <i class="bi bi-arrow-left"></i> Continue Shopping
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cart summary (Right) -->
+        <div class="col-lg-4 col-12">
+          <div class="summary-card">
+            <h2 class="fs-5 fw-bold mb-4">Order Summary</h2>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">$0.00</span>
+            </div>
+            
+            <div class="summary-row text-danger" id="summary-discount-row" >
+              <span>Discounts</span>
+              <span id="summary-discount">-$0.00</span>
+            </div>
+            
+            <div class="summary-row text-success" id="summary-promo-row" >
+              <span>Coupon Promo (20%)</span>
+              <span id="summary-promo">-$0.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span id="summary-shipping">Free</span>
+            </div>
+            
+            <div class="summary-row total-row">
+              <span>Grand Total</span>
+              <span id="summary-grand-total">$0.00</span>
+            </div>
+            
+            <!-- Coupon Code Entry -->
+            <div class="mt-4 pt-3 border-top">
+              <label for="coupon-input" class="form-label fw-bold text-dark mb-2" class="form-label fw-bold text-dark mb-2 coupon-label">Have a Promo Code?</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="coupon-input" placeholder="e.g. VITAL20" aria-label="Promo Code">
+                <button class="btn btn-outline-primary-custom px-3" id="btn-apply-coupon">Apply</button>
+              </div>
+              <div class="mt-2" id="coupon-status-msg" class="mt-2 coupon-status"></div>
+            </div>
+
+            <!-- Proceed to Checkout -->
+            <a href="checkout.html" class="btn btn-primary-custom w-100 py-3 mt-4" id="btn-proceed-checkout">
+              Proceed to Checkout <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+            
+            <!-- Guarantee row -->
+            <div class="mt-4 pt-3 border-top text-center text-secondary" class="mt-4 pt-3 border-top text-center text-secondary cart-disclaimer">
+              <div class="d-flex justify-content-center gap-3 mb-2">
+                <span><i class="bi bi-shield-lock text-success me-1"></i> SSL Secured</span>
+                <span><i class="bi bi-arrow-counterclockwise text-success me-1"></i> 30-Day returns</span>
+              </div>
+              <span>We accept Visa, Mastercard, AMEX, PayPal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recommended Products -->
+      <section class="mt-5 pt-4">
+        <h2 class="fs-4 fw-bold mb-4">Recommended for You</h2>
+        <div class="row g-4" id="cart-recommended-products">
+          <!-- Load cards -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="btn-back-to-top" class="btn" aria-label="Scroll Back to Top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- External Library JS Bundles (CDNs) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" ></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main ES Module Script Loader -->
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/cart.js"></script>
+  <script type="module" src="js/search.js"></script>
+</body>
+</html>
