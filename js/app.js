@@ -3,6 +3,11 @@ import { initSliders } from './slider.js';
 import { showToast } from './utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const bestSellersViewAllLink = document.getElementById('best-sellers-view-all-link');
+  if (bestSellersViewAllLink) {
+    bestSellersViewAllLink.href = 'products.html?badge=BEST%20SELLER';
+  }
+
   // 1. Seed Mock Data matching design badges on first load if empty
   const existingCart = localStorage.getItem('cart');
   const existingWishlist = localStorage.getItem('wishlist');
