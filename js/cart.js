@@ -1,5 +1,5 @@
 /* Cart Page Controller & Global Operations Module */
-import { getLocalStorage, setLocalStorage, formatCurrency, renderStars, showToast } from './utils.js';
+import { getLocalStorage, setLocalStorage, formatCurrency, renderStars, showToast, isAuthenticated, showLoginPrompt } from './utils.js';
 import { updateNavbarBadges } from './navbar.js';
 import { toggleWishlist, isInWishlist } from './wishlist.js';
 
@@ -329,6 +329,12 @@ function renderRecommendedProducts() {
  */
 export function addToCart(product, quantity = 1, selectedColor = null) {
   if (!product || !product.id) return;
+
+  if (!isAuthenticated()) {
+    showLoginPrompt('cart');
+    return;
+  }
+
   let cart = getLocalStorage('cart', []);
   
   const existingItemIndex = cart.findIndex(item => 

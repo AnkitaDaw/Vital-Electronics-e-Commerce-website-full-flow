@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account - Vital Electronics</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="Create an account or sign in to manage orders, wishlist items, and saved preferences.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <div id="announcement-bar-placeholder"></div>
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <main class="account-page py-5" role="main">
+    <div class="container py-4">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="account-hero-card">
+            <span class="hero-slide-badge">Account Access</span>
+            <h1 class="account-hero-title">Welcome back to Vital Electronics</h1>
+            <p class="account-hero-text">
+              Sign in to continue shopping, track orders, save favorites, and enjoy a faster checkout experience.
+            </p>
+            <ul class="account-benefits-list">
+              <li><i class="bi bi-shield-check"></i> Secure account dashboard</li>
+              <li><i class="bi bi-heart"></i> Save your wishlist instantly</li>
+              <li><i class="bi bi-cart3"></i> Fast re-ordering from your cart</li>
+            </ul>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a href="products.html" class="btn btn-primary-custom">Browse Products</a>
+              <a href="cart.html" class="btn btn-secondary-custom">View Cart</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="auth-card" id="auth-card">
+            <div class="auth-card-head">
+              <div>
+                <p class="auth-card-kicker">Your account</p>
+                <h2 class="auth-card-title">Sign in or create an account</h2>
+              </div>
+              <div class="auth-status-pill" id="auth-status-pill">New here?</div>
+            </div>
+
+            <div class="auth-tabs" role="tablist" aria-label="Authentication modes">
+              <button class="auth-tab-btn active" type="button" data-mode="login" id="show-login-tab">Login</button>
+              <button class="auth-tab-btn" type="button" data-mode="register" id="show-register-tab">Register</button>
+            </div>
+
+            <div id="auth-message" class="auth-message" role="status" aria-live="polite"></div>
+
+            <form id="login-form" class="auth-form active-form" novalidate>
+              <div class="mb-3">
+                <label for="login-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="login-email" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="login-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+              </div>
+              <button type="submit" class="btn btn-primary-custom w-100">Login</button>
+            </form>
+
+            <form id="register-form" class="auth-form" novalidate>
+              <div class="mb-3">
+                <label for="register-name" class="form-label">Full name</label>
+                <input type="text" class="form-control" id="register-name" placeholder="Alex Morgan" required>
+              </div>
+              <div class="mb-3">
+                <label for="register-email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="register-email" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="register-password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="register-password" placeholder="Create a password" required>
+              </div>
+              <div class="mb-3">
+                <label for="register-confirm-password" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" id="register-confirm-password" placeholder="Re-enter password" required>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="register-terms" required>
+                <label class="form-check-label" for="register-terms">
+                  I agree to the terms and privacy policy.
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary-custom w-100">Create Account</button>
+            </form>
+          </div>
+
+          <div class="account-dashboard d-none" id="account-dashboard">
+            <div class="account-dashboard-card">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                  <p class="auth-card-kicker">Signed in</p>
+                  <h3 class="auth-card-title mb-0" id="dashboard-name">Welcome</h3>
+                </div>
+                <button class="btn btn-outline-secondary btn-sm" id="logout-btn" type="button">Logout</button>
+              </div>
+              <p class="account-dashboard-text" id="dashboard-email"></p>
+              <div class="dashboard-actions">
+                <a href="checkout.html" class="btn btn-primary-custom">Continue to Checkout</a>
+                <a href="wishlist.html" class="btn btn-secondary-custom">Open Wishlist</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/account.js"></script>
+</body>
+
+</html>

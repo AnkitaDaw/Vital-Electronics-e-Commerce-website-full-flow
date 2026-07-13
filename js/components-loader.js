@@ -1,4 +1,4 @@
-import { initStickyHeader, updateNavbarBadges } from './navbar.js';
+import { initAuthUI, initStickyHeader, updateNavbarBadges, initMobileSearch, initModalScrollFix } from './navbar.js';
 import { initSearch } from './search.js';
 
 /**
@@ -30,6 +30,9 @@ export async function loadSharedComponents() {
   // Once all elements are present, wire up the listeners
   initStickyHeader();
   updateNavbarBadges();
+  initAuthUI();
+  initMobileSearch();
+  initModalScrollFix();
   initSearch();
 }
 

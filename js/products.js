@@ -207,9 +207,25 @@ function initProductListingPage() {
     if (breadcrumbCurrent) breadcrumbCurrent.textContent = 'Wishlist';
   }
 
+  if (filterState.wishlistOnly) {
+    const filtersPanel = document.querySelector('aside[role="complementary"]');
+    const offcanvasBody = document.getElementById('offcanvas-filters-body');
+    const topControls = document.getElementById('plp-toolbar');
+    const chipsContainer = document.getElementById('active-filter-chips');
+    const countText = document.getElementById('products-count-text');
+
+    if (filtersPanel) filtersPanel.style.display = 'none';
+    if (offcanvasBody) offcanvasBody.innerHTML = '';
+    if (topControls) topControls.style.display = 'none';
+    if (chipsContainer) chipsContainer.innerHTML = '';
+    if (countText) countText.textContent = 'Your saved wishlist';
+  }
+
   // Render filter items dynamically
-  renderBrandFilters();
-  setupFilterEventListeners();
+  if (!filterState.wishlistOnly) {
+    renderBrandFilters();
+    setupFilterEventListeners();
+  }
 
   // Mobile Offcanvas content syncing
   const offcanvasBody = document.getElementById('offcanvas-filters-body');
@@ -580,7 +596,9 @@ function applyFiltersAndRender() {
   }
 
   // 12. Render Filter Chips
-  renderFilterChips();
+  if (!filterState.wishlistOnly) {
+    renderFilterChips();
+  }
 
   // 13. Paginate & Render
   renderPaginatedProducts(filtered);

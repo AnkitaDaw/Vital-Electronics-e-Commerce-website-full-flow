@@ -1,5 +1,27 @@
 /* Modular Utility Functions */
 
+const AUTH_STORAGE_KEY = 'vital-auth-user';
+
+export function getCurrentUser() {
+  try {
+    const user = localStorage.getItem(AUTH_STORAGE_KEY);
+    return user ? JSON.parse(user) : null;
+  } catch (error) {
+    console.error('Error reading current user:', error);
+    return null;
+  }
+}
+
+export function isAuthenticated() {
+  return Boolean(getCurrentUser());
+}
+
+function getStorageKey(key) {
+  const user = getCurrentUser();
+  if (!user?.email) return key;
+  return `${key}:${user.email.toLowerCase()}`;
+}
+
 /**
  * Formats a number to USD currency string.
  * @param {number} value
@@ -43,8 +65,22 @@ export function renderStars(rating) {
  */
 export function getLocalStorage(key, defaultValue = null) {
   try {
-    const item = localStorage.getItem(key);
-    return item ? JSON.parse(item) : defaultValue;
+    const storageKey = getStorageKey(key);
+    const item = localStorage.getItem(storageKey);
+    if (item) {
+      return JSON.parse(item);
+    }
+
+    const legacyItem = localStorage.getItem(key);
+    if (legacyItem) {
+      const parsedValue = JSON.parse(legacyItem);
+      if (isAuthenticated()) {
+        localStorage.setItem(storageKey, legacyItem);
+      }
+      return parsedValue;
+    }
+
+    return defaultValue;
   } catch (error) {
     console.error(`Error reading LocalStorage key "${key}":`, error);
     return defaultValue;
@@ -58,10 +94,41 @@ export function getLocalStorage(key, defaultValue = null) {
  */
 export function setLocalStorage(key, value) {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(getStorageKey(key), JSON.stringify(value));
   } catch (error) {
     console.error(`Error writing LocalStorage key "${key}":`, error);
   }
+}
+
+export function showLoginPrompt(target = 'account') {
+  let modal = document.getElementById('auth-required-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'auth-required-modal';
+    modal.className = 'modal fade';
+    modal.tabIndex = -1;
+    modal.innerHTML = `
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header border-0">
+            <h5 class="modal-title">Login or Register</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center py-4">
+            <i class="bi bi-person-lock fs-1 text-primary mb-3 d-block"></i>
+            <p class="mb-3">Please sign in or create an account to save items to your wishlist or cart.</p>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+              <a href="account.html" class="btn btn-primary-custom">Log In or Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+
+  const modalInstance = new bootstrap.Modal(modal);
+  modalInstance.show();
 }
 
 /**

@@ -1,5 +1,92 @@
 /* Responsive Media Queries */
 
+/* Modal & Offcanvas Fix */
+.modal-backdrop,
+.offcanvas-backdrop {
+  z-index: 1040 !important;
+}
+
+.modal {
+  z-index: 1060 !important;
+}
+
+.offcanvas {
+  z-index: 1050 !important;
+}
+
+/* Ensure header stays accessible when modal opens */
+.header-wrapper {
+  position: relative;
+  z-index: 1030;
+}
+
+.header-wrapper.is-sticky {
+  z-index: 1031;
+}
+
+/* Mobile Search Bar Styling */
+#mobile-search-bar.active {
+  display: block !important;
+}
+
+#mobile-search-bar{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  background-color: #ffffff;
+  z-index: 1055;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+#mobile-search-bar .search-container {
+  max-width: 100%;
+}
+
+#mobile-search-bar .search-btn {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0rem 0.8rem;
+  border: 1px solid var(--color-primary);
+}
+
+#mobile-search-bar .search-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Offcanvas Styling */
+.offcanvas {
+  width: 280px !important;
+}
+
+.offcanvas-header {
+  padding: 1.25rem;
+  background-color: var(--color-bg-light);
+}
+
+.offcanvas-body {
+  padding: 1.25rem;
+}
+
+.offcanvas-body .nav-link-custom {
+  padding: 0.75rem 0;
+  font-size: 0.95rem;
+  border-left: 2px solid transparent;
+  padding-left: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.offcanvas-body .nav-link-custom:hover {
+  border-left-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 /* --- Up to 1440px (Desktop Container Checks) --- */
 @media (max-width: 1440px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
@@ -85,15 +172,10 @@
     position: relative;
     right: 0;
     width: 100%;
-    height: 200px;
-    padding: 1rem;
+    height: 220px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .promo-img {
-    height: 100%;
-    object-fit: contain;
   }
   .why-choose-section, .testimonials-section {
     padding: 3.5rem 0;

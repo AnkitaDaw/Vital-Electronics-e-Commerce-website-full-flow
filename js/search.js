@@ -4,14 +4,22 @@ import { getLocalStorage, setLocalStorage } from './utils.js';
 let allProducts = [];
 
 /**
- * Initializes the Search autocomplete system.
+ * Initializes the Search autocomplete system for desktop and mobile inputs.
  */
 export async function initSearch() {
-  const searchInput = document.getElementById('global-search-input');
-  const suggestionsBox = document.getElementById('search-suggestions-box');
-  if (!searchInput || !suggestionsBox) return;
+  const searchFields = [
+    {
+      input: document.getElementById('global-search-input'),
+      suggestionsBox: document.getElementById('search-suggestions-box')
+    },
+    {
+      input: document.getElementById('mobile-search-input'),
+      suggestionsBox: document.getElementById('mobile-search-suggestions-box')
+    }
+  ].filter(({ input, suggestionsBox }) => input && suggestionsBox);
 
-  // Load products list for search index
+  if (searchFields.length === 0) return;
+
   try {
     const res = await fetch('./data/products.json');
     allProducts = await res.json();
@@ -19,47 +27,62 @@ export async function initSearch() {
     console.error('Failed to load products index for search:', error);
   }
 
-  // Handle Input Focus / Clicks
-  searchInput.addEventListener('focus', () => {
-    showSuggestions(searchInput.value.trim());
+  searchFields.forEach(({ input, suggestionsBox }) => {
+    attachSearchField(input, suggestionsBox);
   });
 
-  // Hide suggestions when clicking outside
   document.addEventListener('click', (e) => {
-    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-      suggestionsBox.style.display = 'none';
-    }
+    searchFields.forEach(({ input, suggestionsBox }) => {
+      if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = 'none';
+      }
+    });
+  });
+}
+
+function attachSearchField(searchInput, suggestionsBox) {
+  searchInput.addEventListener('focus', () => {
+    showSuggestions(searchInput.value.trim(), searchInput, suggestionsBox);
   });
 
-  // Handle Input typing
   searchInput.addEventListener('input', () => {
-    showSuggestions(searchInput.value.trim());
+    showSuggestions(searchInput.value.trim(), searchInput, suggestionsBox);
   });
 
-  // Handle Enter key or Form Submit
+  const searchButton = searchInput.closest('.search-container')?.querySelector('.search-btn');
+  if (searchButton) {
+    searchButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      submitSearch(searchInput);
+    });
+  }
+
   searchInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      const term = searchInput.value.trim();
-      if (term) {
-        saveRecentSearch(term);
-        // Redirect to PLP with query parameter
-        window.location.href = `products.html?search=${encodeURIComponent(term)}`;
-      }
+      e.preventDefault();
+      submitSearch(searchInput);
     }
   });
+}
+
+function submitSearch(searchInput) {
+  const term = searchInput.value.trim();
+  if (!term) return;
+
+  saveRecentSearch(term);
+  window.location.href = `products.html?search=${encodeURIComponent(term)}`;
 }
 
 /**
  * Displays recent searches or search results based on input text.
  * @param {string} query
+ * @param {HTMLInputElement} searchInput
+ * @param {HTMLElement} suggestionsBox
  */
-function showSuggestions(query) {
-  const suggestionsBox = document.getElementById('search-suggestions-box');
-  const searchInput = document.getElementById('global-search-input');
-  if (!suggestionsBox) return;
+function showSuggestions(query, searchInput, suggestionsBox) {
+  if (!suggestionsBox || !searchInput) return;
 
   if (!query) {
-    // Show Recent Searches
     const recents = getLocalStorage('recent_searches', []);
     if (recents.length === 0) {
       suggestionsBox.style.display = 'none';
@@ -69,7 +92,7 @@ function showSuggestions(query) {
     let html = `
       <div class="recent-search-header">
         <span>Recent Searches</span>
-        <span class="clear-recent" id="btn-clear-recent">Clear</span>
+        <span class="clear-recent">Clear</span>
       </div>
     `;
 
@@ -85,7 +108,6 @@ function showSuggestions(query) {
     suggestionsBox.innerHTML = html;
     suggestionsBox.style.display = 'block';
 
-    // Hook click listeners
     suggestionsBox.querySelectorAll('.suggestion-item').forEach(item => {
       item.addEventListener('click', () => {
         const val = item.getAttribute('data-search-term');
@@ -95,7 +117,7 @@ function showSuggestions(query) {
       });
     });
 
-    const clearBtn = document.getElementById('btn-clear-recent');
+    const clearBtn = suggestionsBox.querySelector('.clear-recent');
     if (clearBtn) {
       clearBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -104,12 +126,11 @@ function showSuggestions(query) {
       });
     }
   } else {
-    // Perform search matching
-    const matches = allProducts.filter(p => 
-      p.name.toLowerCase().includes(query.toLowerCase()) || 
-      p.category.toLowerCase().includes(query.toLowerCase()) || 
+    const matches = allProducts.filter(p =>
+      p.name.toLowerCase().includes(query.toLowerCase()) ||
+      p.category.toLowerCase().includes(query.toLowerCase()) ||
       p.brand.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 5); // Limit to top 5 hits
+    ).slice(0, 5);
 
     if (matches.length === 0) {
       suggestionsBox.innerHTML = `
@@ -138,13 +159,11 @@ function showSuggestions(query) {
     suggestionsBox.innerHTML = html;
     suggestionsBox.style.display = 'block';
 
-    // Hook click listeners
     suggestionsBox.querySelectorAll('.suggestion-item').forEach(item => {
       item.addEventListener('click', () => {
         const prodId = item.getAttribute('data-product-id');
         const term = item.getAttribute('data-search-term');
         saveRecentSearch(term);
-        // Direct to PDP (Product Detail Page)
         window.location.href = `product.html?id=${prodId}`;
       });
     });
@@ -158,7 +177,6 @@ function showSuggestions(query) {
 function saveRecentSearch(term) {
   if (!term) return;
   let recents = getLocalStorage('recent_searches', []);
-  // Filter out existing and keep first 5
   recents = [term, ...recents.filter(x => x.toLowerCase() !== term.toLowerCase())].slice(0, 5);
   setLocalStorage('recent_searches', recents);
 }
@@ -172,16 +190,16 @@ function saveRecentSearch(term) {
 function highlightText(text, query) {
   const index = text.toLowerCase().indexOf(query.toLowerCase());
   if (index === -1) return escapeHTML(text);
-  
+
   const originalMatch = text.slice(index, index + query.length);
   const before = text.slice(0, index);
   const after = text.slice(index + query.length);
-  
+
   return `${escapeHTML(before)}<span class="highlight">${escapeHTML(originalMatch)}</span>${escapeHTML(after)}`;
 }
 
 function escapeHTML(str) {
-  return str.replace(/[&<>'"]/g, 
+  return str.replace(/[&<>'"]/g,
     tag => ({
       '&': '&amp;',
       '<': '&lt;',

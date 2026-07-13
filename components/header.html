@@ -14,71 +14,134 @@
       </div>
     </a>
 
-    <!-- Navbar Mobile Toggle -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Collapsible Content -->
-    <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
-      <!-- Navigation Links -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-1">
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-          </a>
-          <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="products.html?category=Smart%20Watches">Smart Watches</a></li>
-            <li><a class="dropdown-item" href="products.html?category=Audio">Audio</a></li>
-            <li><a class="dropdown-item" href="products.html?category=Smart%20Home">Smart Home</a></li>
-            <li><a class="dropdown-item" href="products.html?category=Mobile%20Accessories">Mobile Accessories</a></li>
-            <li><a class="dropdown-item" href="products.html?category=Computer%20Accessories">Computer Accessories</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="products.html?badge=DEAL">Deals</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="products.html?badge=NEW">New Arrivals</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="products.html?badge=BEST%20SELLER">Best Sellers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-custom" href="support.html">Support</a>
-        </li>
-      </ul>
-
-      <!-- Search Bar -->
-      <div class="search-container mx-lg-3 my-2 my-lg-0" role="search">
-        <input type="text" class="form-control search-input" id="global-search-input"
-          placeholder="Search for products..." aria-label="Search Catalog" autocomplete="off">
-        <button class="search-btn" aria-label="Submit Search">
-          <i class="bi bi-search"></i>
-        </button>
-        <!-- Suggestions Box -->
-        <div class="search-suggestions" id="search-suggestions-box"></div>
+    <!-- Desktop Navigation Links -->
+    <div class="navbar-nav-desktop d-none d-lg-flex ms-lg-4 gap-1 me-auto">
+      <div class="nav-item dropdown">
+        <a class="nav-link nav-link-custom dropdown-toggle" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu dropdown-custom border-0 shadow-lg" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="products.html?category=Smart%20Watches">Smart Watches</a></li>
+          <li><a class="dropdown-item" href="products.html?category=Audio">Audio</a></li>
+          <li><a class="dropdown-item" href="products.html?category=Smart%20Home">Smart Home</a></li>
+          <li><a class="dropdown-item" href="products.html?category=Mobile%20Accessories">Mobile Accessories</a></li>
+          <li><a class="dropdown-item" href="products.html?category=Computer%20Accessories">Computer Accessories</a></li>
+        </ul>
       </div>
-
-      <!-- User Status Actions -->
-      <div class="d-flex align-items-center gap-2 ms-lg-3">
-        <a href="checkout.html" class="nav-action-btn" aria-label="User Profile Profile">
-          <i class="bi bi-person"></i>
-          <span>Account</span>
-        </a>
-        <a href="products.html?wishlist=true" class="nav-action-btn" aria-label="View Saved Wishlist">
-          <i class="bi bi-heart"></i>
-          <span>Wishlist</span>
-          <span class="badge-count" id="wishlist-badge-count">1</span>
-        </a>
-        <a href="cart.html" class="nav-action-btn" aria-label="View Shopping Cart">
-          <i class="bi bi-cart3"></i>
-          <span>Cart</span>
-          <span class="badge-count" id="cart-badge-count">2</span>
-        </a>
+      <div class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=DEAL">Deals</a>
       </div>
+      <div class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=NEW">New Arrivals</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=BEST%20SELLER">Best Sellers</a>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link nav-link-custom" href="support.html">Support</a>
+      </div>
+    </div>
+
+    <!-- Desktop Search Bar -->
+    <div class="search-container mx-lg-3 my-2 my-lg-0 d-none d-xl-block" role="search">
+      <input type="text" class="form-control search-input" id="global-search-input"
+        placeholder="Search for products..." aria-label="Search Catalog" autocomplete="off">
+      <button class="search-btn" aria-label="Submit Search">
+        <i class="bi bi-search"></i>
+      </button>
+      <!-- Suggestions Box -->
+      <div class="search-suggestions" id="search-suggestions-box"></div>
+    </div>
+
+    <!-- Action Buttons (Always visible) -->
+    <div class="d-flex align-items-center gap-2 ms-lg-3">
+      <!-- Mobile Search Button -->
+      <button class="nav-action-btn d-xl-none" id="mobile-search-toggle" aria-label="Search">
+        <i class="bi bi-search"></i>
+        <span class="d-none d-lg-inline">Search</span>
+      </button>
+
+      <!-- Account -->
+      <a href="account.html" class="nav-action-btn" aria-label="User Account" id="header-account-link">
+        <i class="bi bi-person"></i>
+        <span id="header-account-label" class="d-none d-lg-inline">Login</span>
+      </a>
+
+      <!-- Wishlist -->
+      <a href="wishlist.html" class="nav-action-btn" aria-label="View Saved Wishlist" data-requires-auth="true" data-auth-target="wishlist">
+        <i class="bi bi-heart"></i>
+        <span class="d-none d-lg-inline">Wishlist</span>
+        <span class="badge-count" id="wishlist-badge-count">1</span>
+      </a>
+
+      <!-- Cart -->
+      <a href="cart.html" class="nav-action-btn" aria-label="View Shopping Cart" data-requires-auth="true" data-auth-target="cart">
+        <i class="bi bi-cart3"></i>
+        <span class="d-none d-lg-inline">Cart</span>
+        <span class="badge-count" id="cart-badge-count">2</span>
+      </a>
+
+      <!-- Mobile Menu Toggle (Offcanvas) -->
+      <button class="navbar-toggler border-0 text-black p-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavCanvas"
+        aria-controls="mobileNavCanvas" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- Mobile Search Bar (Shown when search is toggled) -->
+<div class="mobile-search-container d-xl-none p-3 border-top" id="mobile-search-bar" style="display: none;">
+  <div class="search-container" role="search">
+    <input type="text" class="form-control search-input" id="mobile-search-input"
+      placeholder="Search for products..." aria-label="Search Catalog" autocomplete="off">
+    <button class="search-btn" aria-label="Submit Search">
+      <i class="bi bi-search"></i>
+    </button>
+    <!-- Suggestions Box -->
+    <div class="search-suggestions" id="mobile-search-suggestions-box"></div>
+  </div>
+</div>
+
+<!-- Mobile Navigation Offcanvas (Right Side) -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavCanvas" aria-labelledby="mobileNavLabel">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="mobileNavLabel">Menu</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <!-- Mobile Navigation Links -->
+    <ul class="navbar-nav flex-column gap-2">
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?category=Smart%20Watches" data-bs-dismiss="offcanvas">Smart Watches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?category=Audio" data-bs-dismiss="offcanvas">Audio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?category=Smart%20Home" data-bs-dismiss="offcanvas">Smart Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?category=Mobile%20Accessories" data-bs-dismiss="offcanvas">Mobile Accessories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?category=Computer%20Accessories" data-bs-dismiss="offcanvas">Computer Accessories</a>
+      </li>
+      <hr class="my-2">
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=DEAL" data-bs-dismiss="offcanvas">Deals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=NEW" data-bs-dismiss="offcanvas">New Arrivals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="products.html?badge=BEST%20SELLER" data-bs-dismiss="offcanvas">Best Sellers</a>
+      </li>
+      <hr class="my-2">
+      <li class="nav-item">
+        <a class="nav-link nav-link-custom" href="support.html" data-bs-dismiss="offcanvas">Support</a>
+      </li>
+    </ul>
+  </div>
+</div>

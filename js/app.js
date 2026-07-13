@@ -5,7 +5,6 @@ import { showToast } from './utils.js';
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Seed Mock Data matching design badges on first load if empty
   const existingCart = localStorage.getItem('cart');
-  const existingWishlist = localStorage.getItem('wishlist');
 
   if (!existingCart) {
     localStorage.setItem('cart', JSON.stringify([
@@ -27,22 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
       shipping: 0,
       grandTotal: 118.00
     }));
-  }
-
-  if (!existingWishlist) {
-    localStorage.setItem('wishlist', JSON.stringify([
-      {
-        id: "vital-fit-pro",
-        name: "Vital Fit Pro",
-        category: "Smart Watches",
-        price: 129.00,
-        rating: 4.5,
-        reviewsCount: 128,
-        image: "assets/images/products/vital-fit-pro.png",
-        badge: "NEW",
-        badgeType: "success"
-      }
-    ]));
   }
 
   // Force badge sync

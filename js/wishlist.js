@@ -1,5 +1,5 @@
 /* Wishlist Manager Module */
-import { getLocalStorage, setLocalStorage, showToast } from './utils.js';
+import { getLocalStorage, setLocalStorage, showToast, isAuthenticated, showLoginPrompt } from './utils.js';
 import { updateNavbarBadges } from './navbar.js';
 
 /**
@@ -8,6 +8,10 @@ import { updateNavbarBadges } from './navbar.js';
  * @returns {boolean}
  */
 export function isInWishlist(productId) {
+  if (!isAuthenticated()) {
+    return false;
+  }
+
   const wishlist = getLocalStorage('wishlist', []);
   return wishlist.some(item => item.id === productId);
 }
@@ -18,6 +22,11 @@ export function isInWishlist(productId) {
  */
 export function toggleWishlist(product) {
   if (!product || !product.id) return;
+
+  if (!isAuthenticated()) {
+    showLoginPrompt('wishlist');
+    return;
+  }
   
   let wishlist = getLocalStorage('wishlist', []);
   const index = wishlist.findIndex(item => item.id === product.id);

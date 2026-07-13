@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist - Vital Electronics</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <meta name="description" content="View the products you saved to your wishlist and add them to your cart when you're ready.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+  <div id="announcement-bar-placeholder"></div>
+  <header id="header-placeholder" class="header-wrapper" role="banner"></header>
+
+  <main class="wishlist-page py-5" role="main">
+    <div class="container py-4">
+      <div class="wishlist-page-header mb-4">
+        <div>
+          <p class="auth-card-kicker mb-2">Saved for later</p>
+          <h1 class="account-hero-title mb-2">Your Wishlist</h1>
+          <p class="account-hero-text mb-0">Only your saved product cards are shown here.</p>
+        </div>
+        <a href="products.html" class="btn btn-primary-custom">Continue Shopping</a>
+      </div>
+
+      <div id="wishlist-empty-state" class="wishlist-empty-state d-none">
+        <i class="bi bi-heart fs-1 text-primary"></i>
+        <h3 class="mt-3 fw-bold">No wishlist items yet</h3>
+        <p class="text-secondary">Sign in and save items you love to see them here.</p>
+        <a href="account.html" class="btn btn-primary-custom mt-2">Go to Account</a>
+      </div>
+
+      <div id="wishlist-products-grid" class="row g-4"></div>
+    </div>
+  </main>
+
+  <footer id="footer-placeholder" class="footer-section text-light" role="contentinfo"></footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script type="module" src="js/components-loader.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/wishlist-page.js"></script>
+  <script type="module" src="js/search.js"></script>
+</body>
+
+</html>
